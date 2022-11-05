@@ -4,7 +4,10 @@ import {Link} from "react-router-dom";
 import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
-  
+  const capitalize = (word) => {
+    const lower = word.toLowerCase();
+    return lower.charAt(0).toUpperCase() + lower.slice(1);
+  }
 
   return (
     <nav className={`navbar navbar-expand-lg navbar-${props.mode} bg-${props.mode}`}>
@@ -24,13 +27,10 @@ export default function Navbar(props) {
         
        
       </ul>
-      {/* <form className="d-flex ms-auto" role="search">
-        <input className="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
-        <button className="btn btn-outline-info" type="submit">Search</button>
-      </form> */}
+      
       <div className={`form-check form-switch ms-auto text-${props.mode==='light'?'dark':'light'}`}>
         <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" checked/>
-        <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable Dark mode</label>
+            <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {capitalize(props.mode === 'light' ? 'dark' : 'light')} mode</label>
       </div>
     </div>
   </div>
