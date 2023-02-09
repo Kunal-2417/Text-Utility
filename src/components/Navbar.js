@@ -1,7 +1,6 @@
-import React ,{useState} from 'react'
+import React  from 'react'
 import {Link} from "react-router-dom";
 
-import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   const capitalize = (word) => {
@@ -38,10 +37,10 @@ export default function Navbar(props) {
     
   )
 }
-Navbar.PropTypes={
-    title: PropTypes.string,
-    aboutus: PropTypes.string
-}
+// Navbar.PropTypes={
+//     title: PropTypes.string,
+//     aboutus: PropTypes.string
+// }
 Navbar.defaultProps={
     title:'Set Title here',
     aboutus:'About us Here'
