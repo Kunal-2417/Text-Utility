@@ -1,6 +1,7 @@
-import React  from 'react'
+import React ,{useState} from 'react'
 import {Link} from "react-router-dom";
 
+import PropTypes from 'prop-types'
 
 export default function Navbar(props) {
   const capitalize = (word) => {
@@ -28,7 +29,7 @@ export default function Navbar(props) {
       </ul>
       
       <div className={`form-check form-switch ms-auto text-${props.mode==='light'?'dark':'light'}`}>
-        <input className="form-check-input" onClick={props.toggleMode} type="checkbox" role="switch" id="flexSwitchCheckDefault" checked/>
+        <input className="form-check-input" onClick={props.toggleMode} onChange={(e)=>{}} type="checkbox" role="switch" id="flexSwitchCheckDefault" checked/>
             <label className="form-check-label" htmlFor="flexSwitchCheckDefault">Enable {capitalize(props.mode === 'light' ? 'dark' : 'light')} mode</label>
       </div>
     </div>
